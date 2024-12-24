@@ -130,7 +130,6 @@
             border-radius: 5px;
         }
 
-        /* Modal styles */
         .modal {
             display: none;
             position: fixed;
@@ -196,6 +195,69 @@
         .submit-button:hover {
             background: #45a049;
         }
+
+        /* Styles for gallery and latest news */
+        .gallery img {
+            width: 20%;
+            height: auto;
+            margin: 10px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.1);
+        }
+
+        #latest-news {
+            background-color: var(--bg-color);
+            padding: 2rem;
+            border: 1px solid #ccc;
+            margin-top: 2rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+
+        #latest-news h2 {
+            color: var(--header-bg-color);
+        }
+
+        #latest-news ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        #latest-news ul li {
+            background: #e9e9e9;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        #latest-news ul li:hover {
+            background: #d6d6d6;
+        }
+
+        .navigation-buttons {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .navigation-buttons button {
+            padding: 10px 15px;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+            background-color: var(--nav-bg-color);
+            color: white;
+            cursor: pointer;
+        }
+
+        .navigation-buttons button:hover {
+            background-color: #333;
+        }
     </style>
 </head>
 <body>
@@ -210,6 +272,7 @@
         <a href="#admissions">Admissions</a>
         <a href="#contact">Contact Us</a>
         <a href="#staff">Our Staff</a>
+        <a href="#latest-news">Latest News</a>
     </nav>
     <div class="hero">
         <div>
@@ -217,13 +280,18 @@
             <p>Your child's bright future starts here at Knew Zone Academy.</p>
         </div>
     </div>
+
+    <section id="about">
+        <h2>About Us</h2>
+        <p>Knew Zone Academy is dedicated to nurturing young minds, providing a robust educational foundation that empowers our students for future success. Our goal is to inspire academic excellence, moral growth, and social responsibility. At Knew Zone, we pride ourselves on our holistic approach to education, small class sizes, and a supportive community environment. </p>
+    </section>
+
     <section id="admissions">
         <h2>Admissions</h2>
         <p>Join the Knew Zone Academy family! Visit our admissions page for enrollment details or contact us directly for guidance.</p>
         <button class="join-button" onclick="openModal()">Join the School</button>
     </section>
 
-    <!-- Modal -->
     <div id="joinModal" class="modal">
         <div class="modal-content">
             <span class="close-button" onclick="closeModal()">&times;</span>
@@ -257,14 +325,34 @@
         <h2>Our Staff</h2>
         <p>Meet our highly qualified and dedicated teaching and non-teaching staff who work tirelessly to provide the best education and care for your children. Our team includes experienced educators, administrators, and support staff committed to excellence.</p>
     </section>
+
+    <section id="gallery">
+        <h2>Gallery</h2>
+        <div class="gallery">
+            <img src="https://github.com/Robertmwatua/knew_zone/blob/main/Screenshot%20(173).png?raw=true" alt="Picture 1">
+            <img src="https://github.com/Robertmwatua/knew_zone/blob/main/Screenshot%20(175).png?raw=true" alt="Picture 2">
+            <img src="https://github.com/Robertmwatua/knew_zone/blob/main/Screenshot%20(176).png?raw=true" alt="Picture 3">
+            <img src="https://github.com/Robertmwatua/knew_zone/blob/main/Screenshot%20(177).png?raw=true" alt="Picture 4">
+            <img src="https://github.com/Robertmwatua/knew_zone/blob/main/Screenshot%20(180).png?raw=true" alt="Picture 5">
+            <img src="https://github.com/Robertmwatua/knew_zone/blob/main/Screenshot%20(181).png?raw=true" alt="Picture 6">
+            <img src="https://github.com/Robertmwatua/knew_zone/blob/main/Screenshot%20(182).png?raw=true" alt="Picture 7">
+        </div>
+    </section>
+
+    <section id="latest-news">
+        <h2>Latest News</h2>
+        <ul>
+            <li>Upcoming graduation ceremony scheduled for January 15, 2025.</li>
+            <li>Admissions for the next term open from January 1, 2025.</li>
+            <li>Sports Day planned for February 20, 2025.</li>
+        </ul>
+    </section>
+
     <section id="contact">
         <h2>Contact Us</h2>
         <p>Email: info@knewzoneacademy.com | Phone: +254 0710124816</p>
-        <p>Address: Knew Zone Academy, Malindi, Kenya</p>
-    </section>
-    <section id="map">
-        <h2>Our Location</h2>
-        <div>
+        <p>Address: Knew Zone Academy, Malindi, Kenya - Ndugu Mnani</p>
+        <div id="map">
             <iframe 
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31869.893353108956!2d36.82194647642931!3d-1.2920658791749698!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMSbCsDE3JzIyLjQiUyAzNsKwNDknMjIuNyJF!5e0!3m2!1sen!2ske!4v1679384704186!5m2!1sen!2ske" 
                 width="600" 
@@ -275,10 +363,36 @@
                 referrerpolicy="no-referrer-when-downgrade">
             </iframe>
         </div>
+        <div>
+            <h3>Contact Form</h3>
+            <form>
+                <div class="form-group">
+                    <label for="name">Your Name:</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Your Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" placeholder="Enter your message" required></textarea>
+                </div>
+                <button type="submit" class="submit-button">Send</button>
+            </form>
+        </div>
     </section>
+
+    <div class="navigation-buttons">
+        <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})">Go to Top</button>
+        <button onclick="window.scrollTo({top: document.body.scrollHeight, behavior: 'smooth'})">Go to Bottom</button>
+    </div>
+
     <footer class="footer">
         <p>&copy; 2024 Knew Zone Academy. All rights reserved.</p>
+        <p>For more information, visit <a href="https://moyomzuri.org/en/" target="_blank">Moyomzuri.org</a>.</p>
     </footer>
+
     <script>
         function toggleTheme() {
             const body = document.body;
