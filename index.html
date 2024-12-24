@@ -123,8 +123,9 @@
             position: fixed;
             top: 10px;
             right: 10px;
-            background: #fff;
-            border: 1px solid #ccc;
+            background: var(--nav-bg-color);
+            color: #fff;
+            border: none;
             padding: 0.5rem 1rem;
             cursor: pointer;
             border-radius: 5px;
@@ -148,7 +149,8 @@
             padding: 20px;
             border: 1px solid #ccc;
             border-radius: 5px;
-            width: 50%;
+            width: 90%;
+            max-width: 500px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
@@ -198,12 +200,24 @@
 
         /* Styles for gallery and latest news */
         .gallery img {
-            width: 20%;
+            width: calc(100% / 2 - 20px);
             height: auto;
             margin: 10px;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             transition: transform 0.3s;
+        }
+
+        @media (min-width: 600px) {
+            .gallery img {
+                width: calc(100% / 4 - 20px);
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .gallery img {
+                width: calc(100% / 6 - 20px);
+            }
         }
 
         .gallery img:hover {
@@ -354,8 +368,8 @@
         <p>Address: Knew Zone Academy, Malindi, Kenya - Ndugu Mnani</p>
         <div id="map">
             <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31869.893353108956!2d36.82194647642931!3d-1.2920658791749698!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMSbCsDE3JzIyLjQiUyAzNsKwNDknMjIuNyJF!5e0!3m2!1sen!2ske!4v1679384704186!5m2!1sen!2ske" 
-                width="600" 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4033437.50921122!2d40.02334437806531!3d-3.2082459602440754!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1841a8f4ea4d02ad%3A0xb80fa9334132214d!2sNdugu%20Mnani%2C%20Malindi%2C%20Kenya!5e0!3m2!1sen!2ske!4v1694164508582!5m2!1sen!2ske" 
+                width="100%" 
                 height="450" 
                 style="border:0;" 
                 allowfullscreen="" 
@@ -399,7 +413,7 @@
             const themeToggle = document.querySelector('.theme-toggle');
             if (body.getAttribute('data-theme') === 'dark') {
                 body.removeAttribute('data-theme');
-                themeToggle.textContent = 'Switch to Dark Mode';
+               themeToggle.textContent = 'Switch to Dark Mode';
             } else {
                 body.setAttribute('data-theme', 'dark');
                 themeToggle.textContent = 'Switch to Light Mode';
@@ -416,3 +430,4 @@
     </script>
 </body>
 </html>
+
