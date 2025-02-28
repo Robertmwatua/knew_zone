@@ -11,12 +11,273 @@
     <meta name="twitter:card" content="summary_large_image">
     <title>Knew Zone Academy - Quality Education in Malindi, Kenya</title>
     <link rel="icon" href="https://github.com/Robertmwatua/knew_zone/blob/main/Knew%20Zone%20Academy%20(2).png?raw=true" type="image/png">
-    <link rel="stylesheet" href="style.css">
+    <style>
+        :root {
+            --bg-color: #f5f5dc;
+            --text-color: #333;
+            --header-bg-color: #9370db;
+            --nav-bg-color: #4CAF50;
+            --footer-bg-color: #9370db;
+        }
+
+        [data-theme="dark"] {
+            --bg-color: #333;
+            --text-color: #f5f5dc;
+            --header-bg-color: #4CAF50;
+            --nav-bg-color: #9370db;
+            --footer-bg-color: #4CAF50;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: var(--text-color);
+            background: var(--bg-color);
+        }
+
+        header {
+            background: var(--header-bg-color);
+            color: #fff;
+            padding: 1rem 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .logo {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 100px;
+        }
+
+        nav {
+            background: var(--nav-bg-color);
+            padding: 0.5rem 0;
+            text-align: center;
+        }
+
+        nav a {
+            color: #fff;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        nav a:hover {
+            background: #333;
+            color: #fff;
+            transform: scale(1.1);
+        }
+
+        .hero {
+            background: url('https://github.com/Robertmwatua/knew-zone/blob/main/IMG-20241025-WA0029.jpg?raw=true') no-repeat center center/cover;
+            height: 60vh;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 2rem;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+        }
+
+        section {
+            padding: 2rem;
+        }
+
+        #staff {
+            background: var(--bg-color);
+            padding: 2rem;
+        }
+
+        #staff h2 {
+            color: var(--header-bg-color);
+        }
+
+        #map {
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .footer {
+            background: var(--footer-bg-color);
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+        }
+
+        .theme-toggle {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background: var(--nav-bg-color);
+            color: #fff;
+            border: none;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-content {
+            background-color: #fff;
+            margin: 10% auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 90%;
+            max-width: 500px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .close-button {
+            float: right;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #333;
+            cursor: pointer;
+        }
+
+        .close-button:hover {
+            color: red;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-group select, .form-group input {
+            width: 100%;
+            padding: 0.5rem;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .submit-button {
+            background: #4CAF50;
+            color: #fff;
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .submit-button:hover {
+            background: #45a049;
+        }
+
+        /* Styles for gallery and latest news */
+        .gallery img {
+            width: calc(100% / 2 - 20px);
+            height: auto;
+            margin: 10px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+        }
+
+        @media (min-width: 600px) {
+            .gallery img {
+                width: calc(100% / 4 - 20px);
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .gallery img {
+                width: calc(100% / 6 - 20px);
+            }
+        }
+
+        .gallery img:hover {
+            transform: scale(1.1);
+        }
+
+        #latest-news {
+            background-color: var(--bg-color);
+            padding: 2rem;
+            border: 1px solid #ccc;
+            margin-top: 2rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+
+        #latest-news h2 {
+            color: var(--header-bg-color);
+        }
+
+        #latest-news ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        #latest-news ul li {
+            background: #e9e9e9;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        #latest-news ul li:hover {
+            background: #d6d6d6;
+        }
+
+        .navigation-buttons {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .navigation-buttons button {
+            padding: 10px 15px;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+            background-color: var(--nav-bg-color);
+            color: white;
+            cursor: pointer;
+        }
+
+        .navigation-buttons button:hover {
+            background-color: #333;
+        }
+    </style>
 </head>
 <body>
     <button class="theme-toggle" onclick="toggleTheme()">Switch to Dark Mode</button>
     <header>
-        <img src="https://github.com/Robertmwatua/knew-zone/blob/main/KNEW.png?raw=true" alt="Knew Zone Academy Logo" class="logo">
+        <img src="https://github.com/Robertmwatua/knew-zone/blob/main/KNEW.png?raw=true" alt="Knew Zone Academy Logo - Quality Education" class="logo">
         <h1>Welcome to Knew Zone Academy</h1>
     </header>
     <nav>
@@ -29,14 +290,14 @@
     </nav>
     <div class="hero">
         <div>
-            <h1>Education is Power</h1>
+            <h1>Education is power</h1>
             <p>Your child's bright future starts here at Knew Zone Academy.</p>
         </div>
     </div>
 
     <section id="about">
         <h2>About Us</h2>
-        <p>Knew Zone Academy is dedicated to nurturing young minds, providing a robust educational foundation that empowers our students for future success.</p>
+        <p>Knew Zone Academy is dedicated to nurturing young minds, providing a robust educational foundation that empowers our students for future success. Our goal is to inspire academic excellence, moral growth, and social responsibility. At Knew Zone, we pride ourselves on our holistic approach to education, small class sizes, and a supportive community environment. </p>
     </section>
 
     <section id="admissions">
@@ -45,8 +306,127 @@
         <button class="join-button" onclick="openModal()">Join the School</button>
     </section>
 
+    <div id="joinModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeModal()">&times;</span>
+            <h2>Admission Form</h2>
+            <form>
+                <div class="form-group">
+                    <label for="student-name">Student Name:</label>
+                    <input type="text" id="student-name" name="student-name" placeholder="Enter student name" required>
+                </div>
+                <div class="form-group">
+                    <label for="class-level">Class/Level:</label>
+                    <select id="class-level" name="class-level" required>
+                        <option value="">Select class/level</option>
+                        <option value="kindergarten">Kindergarten</option>
+                        <option value="grade-1">Grade 1</option>
+                        <option value="grade-2">Grade 2</option>
+                        <option value="grade-3">Grade 3</option>
+                        <option value="upper-primary">Upper Primary</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="parent-contact">Parent/Guardian Contact:</label>
+                    <input type="tel" id="parent-contact" name="parent-contact" placeholder="Enter contact number" required>
+                </div>
+                <button type="submit" class="submit-button">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <section id="staff">
+        <h2>Our Staff</h2>
+        <p>Meet our highly qualified and dedicated teaching and non-teaching staff who work tirelessly to provide the best education and care for your children. Our team includes experienced educators, administrators, and support staff committed to excellence.</p>
+    </section>
+
+    <section id="gallery">
+        <h2>Gallery</h2>
+        <div class="gallery">
+            <img src="https://github.com/Robertmwatua/knew_zone/blob/main/Screenshot%20(173).png?raw=true" alt="Picture 1">
+            <img src="https://github.com/Robertmwatua/knew_zone/blob/main/Screenshot%20(175).png?raw=true" alt="Picture 2">
+            <img src="https://github.com/Robertmwatua/knew_zone/blob/main/Screenshot%20(176).png?raw=true" alt="Picture 3">
+            <img src="https://github.com/Robertmwatua/knew_zone/blob/main/Screenshot%20(177).png?raw=true" alt="Picture 4">
+            <img src="https://github.com/Robertmwatua/knew_zone/blob/main/Screenshot%20(180).png?raw=true" alt="Picture 5">
+            <img src="https://github.com/Robertmwatua/knew_zone/blob/main/Screenshot%20(181).png?raw=true" alt="Picture 6">
+            <img src="https://github.com/Robertmwatua/knew_zone/blob/main/Screenshot%20(182).png?raw=true" alt="Picture 7">
+        </div>
+    </section>
+
+    <section id="latest-news">
+        <h2>Latest News</h2>
+        <ul>
+            <li>Upcoming graduation ceremony scheduled for January 15, 2025.</li>
+            <li>Admissions for the next term open from January 1, 2025.</li>
+            <li>Sports Day planned for February 20, 2025.</li>
+        </ul>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>Email: info@knewzoneacademy.com | Phone: +254 0710124816</p>
+        <p>Address: Knew Zone Academy, Malindi, Kenya - Ndugu Mnani</p>
+        <div id="map">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4033437.50921122!2d40.02334437806531!3d-3.2082459602440754!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1841a8f4ea4d02ad%3A0xb80fa9334132214d!2sNdugu%20Mnani%2C%20Malindi%2C%20Kenya!5e0!3m2!1sen!2ske!4v1694164508582!5m2!1sen!2ske" 
+                width="100%" 
+                height="450" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+        <div>
+            <h3>Contact Form</h3>
+            <form>
+                <div class="form-group">
+                    <label for="name">Your Name:</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Your Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" placeholder="Enter your message" required></textarea>
+                </div>
+                <button type="submit" class="submit-button">Send</button>
+            </form>
+        </div>
+    </section>
+
+    <div class="navigation-buttons">
+        <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})">Go to Top</button>
+        <button onclick="window.scrollTo({top: document.body.scrollHeight, behavior: 'smooth'})">Go to Bottom</button>
+    </div>
+
     <footer class="footer">
-        <p>© 2025 Knew Zone Academy | Malindi, Kenya</p>
+        <p>&copy; 2024 Knew Zone Academy. All rights reserved.</p>
+        <p>For more information, visit <a href="https://moyomzuri.org/en/" target="_blank">Moyomzuri.org</a>.</p>
     </footer>
+
+    <script>
+        function toggleTheme() {
+            const body = document.body;
+            const themeToggle = document.querySelector('.theme-toggle');
+            if (body.getAttribute('data-theme') === 'dark') {
+                body.removeAttribute('data-theme');
+               themeToggle.textContent = 'Switch to Dark Mode';
+            } else {
+                body.setAttribute('data-theme', 'dark');
+                themeToggle.textContent = 'Switch to Light Mode';
+            }
+        }
+
+        function openModal() {
+            document.getElementById('joinModal').style.display = 'block';
+        }
+
+        function closeModal() {
+            document.getElementById('joinModal').style.display = 'none';
+        }
+    </script>
 </body>
 </html>
