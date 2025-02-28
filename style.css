@@ -1,0 +1,107 @@
+:root {
+    --bg-color: #f5f5dc;
+    --text-color: #333;
+    --header-bg-color: #9370db;
+    --nav-bg-color: #4CAF50;
+    --footer-bg-color: #9370db;
+}
+
+[data-theme="dark"] {
+    --bg-color: #333;
+    --text-color: #f5f5dc;
+    --header-bg-color: #4CAF50;
+    --nav-bg-color: #9370db;
+    --footer-bg-color: #4CAF50;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: var(--text-color);
+    background: var(--bg-color);
+}
+
+header {
+    background: var(--header-bg-color);
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+    position: relative;
+}
+
+.logo {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 100px;
+}
+
+nav {
+    background: var(--nav-bg-color);
+    padding: 0.5rem 0;
+    text-align: center;
+}
+
+nav a {
+    color: #fff;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    transition: background 0.3s, transform 0.2s;
+}
+
+nav a:hover {
+    background: #333;
+    color: #fff;
+    transform: scale(1.1);
+}
+
+.hero {
+    background: url('https://github.com/Robertmwatua/knew-zone/blob/main/IMG-20241025-WA0029.jpg?raw=true') no-repeat center center/cover;
+    height: 60vh;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 2rem;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+}
+
+section {
+    padding: 2rem;
+}
+
+.footer {
+    background: var(--footer-bg-color);
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+.theme-toggle {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background: var(--nav-bg-color);
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.theme-toggle:hover {
+    background: #333;
+}
