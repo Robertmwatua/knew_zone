@@ -1,107 +1,67 @@
-:root {
-    --bg-color: #f5f5dc;
-    --text-color: #333;
-    --header-bg-color: #9370db;
-    --nav-bg-color: #4CAF50;
-    --footer-bg-color: #9370db;
-}
-
-[data-theme="dark"] {
-    --bg-color: #333;
-    --text-color: #f5f5dc;
-    --header-bg-color: #4CAF50;
-    --nav-bg-color: #9370db;
-    --footer-bg-color: #4CAF50;
-}
-
+/* General Styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    color: var(--text-color);
-    background: var(--bg-color);
+    background-color: #f8f8f8;
 }
 
-header {
-    background: var(--header-bg-color);
-    color: #fff;
-    padding: 1rem 0;
+/* Center Content with Margins */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background: white;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Header */
+.header {
     text-align: center;
-    position: relative;
+    background: #4CAF50;
+    color: white;
+    padding: 20px 0;
+    font-size: 24px;
 }
 
-.logo {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    width: 100px;
-}
-
-nav {
-    background: var(--nav-bg-color);
-    padding: 0.5rem 0;
-    text-align: center;
-}
-
-nav a {
-    color: #fff;
-    margin: 0 15px;
-    text-decoration: none;
-    font-weight: bold;
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
-    transition: background 0.3s, transform 0.2s;
-}
-
-nav a:hover {
-    background: #333;
-    color: #fff;
-    transform: scale(1.1);
-}
-
-.hero {
-    background: url('https://github.com/Robertmwatua/knew-zone/blob/main/IMG-20241025-WA0029.jpg?raw=true') no-repeat center center/cover;
-    height: 60vh;
-    color: #fff;
+/* Navigation Bar */
+.navbar {
     display: flex;
-    align-items: center;
     justify-content: center;
+    background: #4CAF50;
+    padding: 10px;
+}
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+}
+
+/* About Section */
+.about {
     text-align: center;
-    padding: 0 2rem;
+    padding: 40px 20px;
+    background: #fffbdb;
+    margin: 20px 0;
+    border-radius: 10px;
 }
 
-.hero h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-}
-
-.hero p {
-    font-size: 1.2rem;
-}
-
-section {
-    padding: 2rem;
-}
-
-.footer {
-    background: var(--footer-bg-color);
-    color: #fff;
+/* Admissions Section */
+.admissions {
     text-align: center;
-    padding: 1rem 0;
+    padding: 40px 20px;
+    background: #e8f5e9;
+    margin: 20px 0;
+    border-radius: 10px;
 }
 
-.theme-toggle {
-    position: fixed;
-    top: 10px;
-    right: 10px;
-    background: var(--nav-bg-color);
-    color: #fff;
-    border: none;
-    padding: 0.5rem 1rem;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-.theme-toggle:hover {
-    background: #333;
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+    }
 }
